@@ -12,7 +12,7 @@
 <body>
 <div class="app">
 <section id="home" class="screen on">
-<div class="hero"><small>Μαθηματικά</small><h1>Προετοιμασία<br>εξετάσεων</h1><p>5 ερωτήσεις · Άλγεβρα (1–3) · Γεωμετρία (4–5)</p><div class="art">x²</div></div>
+<div class="hero"><small>Μαθηματικά</small><h1>Προετοιμασία<br>εξετάσεων</h1><p>35 ερωτήσεις · Άλγεβρα (23) · Γεωμετρία (12)</p><div class="art">x²</div></div>
 <div class="menu">
 <button class="card" onclick="sections()"><div class="ico">▣</div><div><b>Εξάσκηση</b><span>Άμεση διόρθωση, με τη σειρά ή ανά ενότητα.</span></div><div class="arr">›</div></button>
 <button class="card" onclick="exam()"><div class="ico">⏱</div><div><b>Προσομοίωση εξέτασης</b><span>Τυχαίες ερωτήσεις, χρονόμετρο και βαθμολογία στο τέλος.</span></div><div class="arr">›</div></button>
@@ -21,18 +21,48 @@
 <div class="stats"><div class="stat"><b id="seen">0</b><span>έχεις δει</span></div><div class="stat"><b id="pct">0%</b><span>σωστές</span></div><div class="stat red"><b id="weak">0</b><span>αδύναμες</span></div></div>
 <button class="reset" onclick="resetStats()">Μηδενισμός στατιστικών</button>
 </section>
-<section id="sections" class="screen"><div class="sheet section"><div class="top"><button class="back" onclick="home()">← Αρχική</button><div class="pill">Εξάσκηση</div></div><h2>Διάλεξε ενότητα</h2><p>Όλες οι ερωτήσεις ή μία ενότητα.</p><div class="secgrid"><button class="sec" onclick="practice('all')">Όλες οι ερωτήσεις<small>5 ερωτήσεις</small></button><button class="sec" onclick="practice('Άλγεβρα')">Άλγεβρα<small>3 ερωτήσεις</small></button><button class="sec" onclick="practice('Γεωμετρία')">Γεωμετρία<small>2 ερωτήσεις</small></button></div></div></section>
-<section id="quiz" class="screen"><div class="sheet" id="sheet"><div class="top"><button class="back" onclick="home()">← Αρχική</button><div id="mode" class="pill">Εξάσκηση</div><div id="timer" class="pill" style="display:none">05:00</div></div><div class="progress"><div id="bar"></div></div><div id="meta" class="meta"></div><div id="q" class="q"></div><div id="answers" class="answers"></div><div id="feed" class="feed"></div><div class="nav"><button id="prev" class="prev" onclick="prev()">← Προηγούμενη</button><button id="next" class="next" onclick="next()">Επόμενη →</button></div></div></section>
+<section id="sections" class="screen"><div class="sheet section"><div class="top"><button class="back" onclick="home()">← Αρχική</button><div class="pill">Εξάσκηση</div></div><h2>Διάλεξε ενότητα</h2><p>Όλες οι ερωτήσεις ή μία ενότητα.</p><div class="secgrid"><button class="sec" onclick="practice('all')">Όλες οι ερωτήσεις<small>35 ερωτήσεις</small></button><button class="sec" onclick="practice('Άλγεβρα')">Άλγεβρα<small>23 ερωτήσεις</small></button><button class="sec" onclick="practice('Γεωμετρία')">Γεωμετρία<small>12 ερωτήσεις</small></button></div></div></section>
+<section id="quiz" class="screen"><div class="sheet" id="sheet"><div class="top"><button class="back" onclick="home()">← Αρχική</button><div id="mode" class="pill">Εξάσκηση</div><div id="timer" class="pill" style="display:none">30:00</div></div><div class="progress"><div id="bar"></div></div><div id="meta" class="meta"></div><div id="q" class="q"></div><div id="answers" class="answers"></div><div id="feed" class="feed"></div><div class="nav"><button id="prev" class="prev" onclick="prev()">← Προηγούμενη</button><button id="next" class="next" onclick="next()">Επόμενη →</button></div></div></section>
 </div>
-<button class="musicBtn" onclick="toggleMusic()">🎵 Τζοκόντα</button>
-<div id="music" class="music"><div class="mhead"><span>🎵 Μάνος Χατζιδάκις · Το Χαμόγελο της Τζοκόντας · Spotify</span><button onclick="toggleMusic()">×</button></div><iframe src="https://open.spotify.com/embed/album/1jbdDkcUBivFykH4sBARwL?utm_source=generator&theme=0" title="Το Χαμόγελο της Τζοκόντας στο Spotify" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+<button class="musicBtn" onclick="toggleMusic()">🎵 Believer</button>
+<div id="music" class="music"><div class="mhead"><span>🎵 Imagine Dragons · Believer · Spotify</span><button onclick="toggleMusic()">×</button></div><iframe src="https://open.spotify.com/embed/track/0pqnGHJpmpxLKifKRmU6WP?utm_source=generator&theme=0" title="Το Χαμόγελο της Τζοκόντας στο Spotify" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
 <script>
 const Q=[
 {s:'Άλγεβρα',q:'Ποιο από τα παρακάτω αναπτύγματα ισχύει για το τετράγωνο αθροίσματος (α + β)²;',a:['α² − β²','α² + β²','α² + 2αβ + β²','α² − 2αβ + β²'],c:2},
 {s:'Άλγεβρα',q:'Η εξίσωση αx² + βx + γ = 0 με α ≠ 0 έχει διπλή ρίζα αν η διακρίνουσα Δ είναι:',a:['Δ > 0','Δ < 0','Δ = 0','Δ ≥ 0'],c:2},
 {s:'Άλγεβρα',q:'Η παραγοντοποίηση του πολυωνύμου x² − 9 είναι:',a:['(x − 3)²','(x − 3)(x + 3)','(x + 3)²','x(x − 9)'],c:1},
 {s:'Γεωμετρία',q:'Σε ένα ορθογώνιο τρίγωνο με οξεία γωνία ω, το ημίτονο sin(ω) ισούται με:',a:['προσκείμενη κάθετη πλευρά / υποτείνουσα','απέναντι κάθετη πλευρά / προσκείμενη κάθετη πλευρά','απέναντι κάθετη πλευρά / υποτείνουσα','υποτείνουσα / απέναντι κάθετη πλευρά'],c:2},
-{s:'Γεωμετρία',q:'Ο λόγος του εμβαδού δύο όμοιων τριγώνων με λόγο ομοιότητας λ είναι:',a:['λ','λ²','2λ','√λ'],c:1}
+{s:'Γεωμετρία',q:'Ο λόγος του εμβαδού δύο όμοιων τριγώνων με λόγο ομοιότητας λ είναι:',a:['λ','λ²','2λ','√λ'],c:1},
+  {s:'Άλγεβρα',q:'Το ανάπτυγμα του (α + β)² είναι:',a:['α² + β²','α² + 2αβ + β²','α² − 2αβ + β²','α² − β²'],c:1},
+{s:'Άλγεβρα',q:'Το ανάπτυγμα του (α − β)² είναι:',a:['α² − β²','α² + 2αβ + β²','α² − 2αβ + β²','α² + β²'],c:2},
+{s:'Άλγεβρα',q:'Η ταυτότητα α² − β² ισούται με:',a:['(α − β)²','(α − β)(α + β)','(α + β)²','α(α − β)'],c:1},
+{s:'Άλγεβρα',q:'Η παραγοντοποίηση του x² − 25 είναι:',a:['(x − 5)²','(x − 5)(x + 5)','(x + 5)²','x(x − 25)'],c:1},
+{s:'Άλγεβρα',q:'3x + 2x − 4 ισούται με:',a:['5x − 4','6x − 4','5x + 4','x − 4'],c:0},
+{s:'Άλγεβρα',q:'Η λύση της εξίσωσης 2x + 5 = 17 είναι:',a:['5','6','7','11'],c:1},
+{s:'Άλγεβρα',q:'Η λύση της εξίσωσης 3(x − 2) = x + 4 είναι:',a:['2','3','4','5'],c:3},
+{s:'Άλγεβρα',q:'Το γινόμενο (x + 2)(x − 2) είναι:',a:['x² − 4','x² + 4','x² − 4x + 4','x² + 4x + 4'],c:0},
+{s:'Άλγεβρα',q:'Αν x = 2, η τιμή του x² − 3x + 1 είναι:',a:['−1','0','1','3'],c:0},
+{s:'Άλγεβρα',q:'Η διακρίνουσα της εξίσωσης x² − 4x + 4 = 0 είναι:',a:['−4','0','4','16'],c:1},
+{s:'Άλγεβρα',q:'Η εξίσωση x² − 5x + 6 = 0 έχει ρίζες:',a:['1 και 6','2 και 3','−2 και −3','3 και 6'],c:1},
+{s:'Άλγεβρα',q:'Αν Δ > 0, μια εξίσωση 2ου βαθμού έχει:',a:['καμία πραγματική ρίζα','μία διπλή ρίζα','δύο διαφορετικές πραγματικές ρίζες','άπειρες ρίζες'],c:2},
+{s:'Άλγεβρα',q:'Αν Δ = 0, μια εξίσωση 2ου βαθμού έχει:',a:['δύο διαφορετικές ρίζες','μία διπλή ρίζα','καμία ρίζα','άπειρες ρίζες'],c:1},
+{s:'Άλγεβρα',q:'Το σύστημα x + y = 7 και x − y = 1 έχει λύση:',a:['(3, 4)','(4, 3)','(5, 2)','(2, 5)'],c:1},
+{s:'Άλγεβρα',q:'Για τη συνάρτηση y = 2x + 1, όταν x = 3, τότε y =:',a:['5','6','7','8'],c:2},
+{s:'Άλγεβρα',q:'Ο συντελεστής διεύθυνσης της ευθείας y = −3x + 5 είναι:',a:['5','−5','3','−3'],c:3},
+{s:'Άλγεβρα',q:'Αν y = 4x και x = 2,5, τότε y =:',a:['6','8','10','12'],c:2},
+{s:'Άλγεβρα',q:'√81 ισούται με:',a:['8','9','18','81'],c:1},
+{s:'Άλγεβρα',q:'Ο βαθμός του πολυωνύμου 3x⁴ − 2x + 1 είναι:',a:['2','3','4','5'],c:2},
+{s:'Άλγεβρα',q:'Για να ορίζεται το κλάσμα 3/(x − 2), πρέπει:',a:['x = 2','x ≠ 2','x > 2','x < 2'],c:1},
+{s:'Γεωμετρία',q:'Σε ορθογώνιο τρίγωνο, sin(ω) είναι:',a:['προσκείμενη / υποτείνουσα','απέναντι / υποτείνουσα','απέναντι / προσκείμενη','υποτείνουσα / απέναντι'],c:1},
+{s:'Γεωμετρία',q:'Σε ορθογώνιο τρίγωνο, cos(ω) είναι:',a:['προσκείμενη / υποτείνουσα','απέναντι / υποτείνουσα','απέναντι / προσκείμενη','υποτείνουσα / προσκείμενη'],c:0},
+{s:'Γεωμετρία',q:'Σε ορθογώνιο τρίγωνο, tan(ω) είναι:',a:['απέναντι / προσκείμενη','προσκείμενη / υποτείνουσα','απέναντι / υποτείνουσα','υποτείνουσα / απέναντι'],c:0},
+{s:'Γεωμετρία',q:'Ορθογώνιο τρίγωνο έχει κάθετες πλευρές 6 και 8. Η υποτείνουσα είναι:',a:['9','10','12','14'],c:1},
+{s:'Γεωμετρία',q:'Σε ορθογώνιο τρίγωνο με υποτείνουσα 13 και μία κάθετη πλευρά 5, η άλλη κάθετη πλευρά είναι:',a:['8','10','12','18'],c:2},
+{s:'Γεωμετρία',q:'Δύο όμοια τρίγωνα έχουν λόγο ομοιότητας 3. Ο λόγος των εμβαδών τους είναι:',a:['3','6','9','27'],c:2},
+{s:'Γεωμετρία',q:'Αν δύο τρίγωνα είναι όμοια, οι αντίστοιχες γωνίες τους είναι:',a:['παραπληρωματικές','ίσες','κάθετες','διπλάσιες'],c:1},
+{s:'Γεωμετρία',q:'Το άθροισμα των γωνιών ενός τριγώνου είναι:',a:['90°','180°','270°','360°'],c:1},
+{s:'Γεωμετρία',q:'Σε ορθογώνιο τρίγωνο, αν οι κάθετες πλευρές είναι 3 και 4, η υποτείνουσα είναι:',a:['5','6','7','8'],c:0},
+{s:'Γεωμετρία',q:'Αν δύο όμοια τρίγωνα έχουν λόγο αντίστοιχων πλευρών λ, ο λόγος των εμβαδών τους είναι:',a:['λ','2λ','λ²','√λ'],c:2}
 ],L=['Α','Β','Γ','Δ'];let type='practice',queue=[],i=0,given={},locked={},tid=null,start=0;const $=x=>document.getElementById(x);
 function st(){return JSON.parse(localStorage.getItem('mathStats')||'{"seen":{},"attempts":0,"right":0,"wrong":{}}')}
 function save(s){localStorage.setItem('mathStats',JSON.stringify(s))}
@@ -43,7 +73,7 @@ function home(){clearInterval(tid);show('home');stats()}function sections(){show
 function practice(sec){type='practice';queue=Q.map((x,k)=>k).filter(k=>sec==='all'||Q[k].s===sec);i=0;given={};locked={};$('mode').textContent=sec==='all'?'Εξάσκηση · Όλα':'Εξάσκηση · '+sec;$('timer').style.display='none';show('quiz');render()}
 function weak(){let s=st();queue=Q.map((x,k)=>k).filter(k=>(s.wrong?.[k]||0)>0);if(!queue.length)return alert('Δεν υπάρχουν ακόμη αδύναμες ερωτήσεις. Κάνε πρώτα εξάσκηση.');type='practice';i=0;given={};locked={};$('mode').textContent='Αδύναμες';$('timer').style.display='none';show('quiz');render()}
 function exam(){type='exam';queue=sh(Q.map((x,k)=>k));i=0;given={};locked={};$('mode').textContent='Προσομοίωση';$('timer').style.display='';start=Date.now();clearInterval(tid);tid=setInterval(tick,1000);tick();show('quiz');render()}
-function tick(){let left=Math.max(0,300-Math.floor((Date.now()-start)/1000));$('timer').textContent=String(Math.floor(left/60)).padStart(2,'0')+':'+String(left%60).padStart(2,'0');if(!left){clearInterval(tid);finish()}}
+function tick(){let left=Math.max(0,1800-Math.floor((Date.now()-start)/1000));$('timer').textContent=String(Math.floor(left/60)).padStart(2,'0')+':'+String(left%60).padStart(2,'0');if(!left){clearInterval(tid);finish()}}
 function render(){let qi=queue[i],q=Q[qi];$('bar').style.width=((i+1)/queue.length*100)+'%';$('meta').textContent=q.s+' · Ερώτηση '+(i+1)+' από '+queue.length;$('q').textContent=q.q;$('answers').innerHTML='';$('feed').textContent='';q.a.forEach((t,k)=>{let b=document.createElement('button');b.className='ans';b.textContent=L[k]+') '+t;if(given[qi]===k)b.classList.add('sel');if(type==='practice'&&locked[qi]){if(k===q.c)b.classList.add('ok');if(k===given[qi]&&k!==q.c)b.classList.add('bad')}b.onclick=()=>choose(k);$('answers').appendChild(b)});if(type==='practice'&&locked[qi])$('feed').textContent=given[qi]===q.c?'✅ Σωστό!':'❌ Λάθος. Σωστό: '+L[q.c]+') '+q.a[q.c];$('prev').disabled=i===0;$('next').textContent=i===queue.length-1?'Τέλος':'Επόμενη →'}
 function choose(k){let qi=queue[i],q=Q[qi];if(type==='practice'&&locked[qi])return;given[qi]=k;if(type==='practice'){locked[qi]=1;record(qi,k===q.c)}render()}function prev(){if(i>0){i--;render()}}function next(){if(i<queue.length-1){i++;render()}else type==='exam'?finish():home()}
 function finish(){clearInterval(tid);let right=0,answered=0;queue.forEach(qi=>{if(given[qi]!==undefined){answered++;let ok=given[qi]===Q[qi].c;if(ok)right++;record(qi,ok)}});$('sheet').innerHTML='<div class="result"><h2>Αποτέλεσμα εξέτασης</h2><div class="score">'+right+'/'+queue.length+'</div><p><b>'+Math.round(100*right/queue.length)+'%</b> σωστές απαντήσεις</p><p>Απάντησες '+answered+' από '+queue.length+'.</p><button onclick="location.reload()">Επιστροφή στην αρχική</button></div>'}
