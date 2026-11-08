@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Χριστίνα | Επαναληπτικό τεστ Γεωμετρίας Α΄ Λυκείου</title>
+<style>
+:root{color-scheme:dark;--bg:#090f23;--panel:#111d36;--panel2:#172543;--line:#2c4167;--text:#f8fbff;--sub:#b6c8e3;--cyan:#6be8f6;--mint:#8ff6c4;--orange:#ffbf71;--rose:#ff8b97;--shadow:0 24px 75px rgba(0,0,0,.28)}
+*{box-sizing:border-box}
+html,body{min-height:100%;margin:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 85% 15%,#213c65 0,transparent 35%),radial-gradient(circle at 9% 90%,#133d47 0,transparent 34%),var(--bg);overflow-x:hidden}
+button,select{font:inherit}
+button{cursor:pointer;transition:transform .12s ease,background .15s ease,border-color .15s ease}
+button:active{transform:scale(.985)}
+button:focus-visible,select:focus-visible{outline:4px solid var(--orange);outline-offset:3px}
+button:disabled{cursor:default}
+.app{max-width:1220px;margin:0 auto;padding:clamp(17px,2.3vw,34px)}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:clamp(20px,3vw,34px)}
+.brand{display:flex;align-items:center;gap:13px;font-weight:850;letter-spacing:.015em;font-size:clamp(17px,1.7vw,23px)}
+.logo{width:49px;height:49px;display:grid;place-items:center;border-radius:15px;color:#031624;background:linear-gradient(135deg,var(--cyan),var(--mint));font-size:27px;font-weight:900}
+.top-actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border:1px solid #486384;border-radius:999px;background:#172945a8;color:#dbeafd;font-weight:650;font-size:clamp(13px,1.2vw,16px)}
+.smallbtn{border:1px solid #4a6485;border-radius:14px;background:#1a2b47;color:#f1f8ff;padding:10px 16px;font-weight:800;font-size:15px}
+.smallbtn:hover{background:#263b5c}
+.hero{text-align:center;padding:32px 5px 20px}
+.kicker{display:inline-flex;padding:9px 18px;border:1px solid #47739c;border-radius:999px;color:var(--cyan);background:#1a385044;font-size:clamp(15px,1.4vw,19px);font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+h1{font-size:clamp(41px,6.5vw,82px);margin:15px 0 7px;line-height:1.04;letter-spacing:-.045em;font-weight:900}
+h1 span{background:linear-gradient(95deg,var(--cyan),var(--mint));background-clip:text;-webkit-background-clip:text;color:transparent}
+.subtitle{color:#c9d8f0;font-size:clamp(18px,1.85vw,24px);margin:12px auto;line-height:1.45;max-width:840px}
+.metrics{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:26px 0 16px}
+.metric{background:#152542bd;border:1px solid #344d6b;padding:13px 19px;border-radius:15px;font-size:clamp(15px,1.45vw,19px);font-weight:750}
+.metric strong{color:var(--mint)}
+.setup{background:linear-gradient(135deg,#142544fa,#101c33fa);box-shadow:var(--shadow);border:1px solid #3a567b;border-radius:26px;max-width:830px;margin:24px auto 0;padding:clamp(24px,3vw,36px)}
+.setup h2{margin:0 0 20px;font-size:clamp(22px,2.5vw,31px)}
+.setting{display:grid;grid-template-columns:minmax(170px,1fr) minmax(260px,1.4fr);align-items:center;gap:14px;padding:15px 0;border-top:1px solid #34465f}
+.setting .setting-label{color:#e3eaff;font-weight:750;font-size:18px}
+.segment{display:flex;gap:7px;background:#0b162c;border:1px solid #38516f;border-radius:15px;padding:5px}
+.segment button{flex:1;padding:13px 10px;border:1px solid transparent;color:#c4d4ea;border-radius:11px;background:transparent;font-weight:850;font-size:17px}
+.segment button.active{background:#25536a;color:#e6ffff;border-color:#4f91a2}
+select{width:100%;padding:13px 15px;background:#0d1a30;border:1px solid #597291;border-radius:13px;color:var(--text);font-size:17px;font-weight:700}
+.mainbtn{width:100%;border:0;border-radius:16px;padding:19px 25px;background:linear-gradient(105deg,#69e4ef,#8ef3bd);color:#071d2a;font-weight:900;font-size:clamp(21px,2.1vw,27px);box-shadow:0 8px 28px #39d6d32b;margin-top:24px}
+.mainbtn:hover{filter:brightness(1.05)}
+.tip{text-align:center;color:#bdcfe9;font-size:15px;margin:17px 0 0;line-height:1.5}
+.game{display:none}
+.progress-block{display:flex;align-items:center;gap:14px;justify-content:space-between;flex-wrap:wrap;margin-bottom:17px}
+.progress-label{font-size:clamp(16px,1.7vw,22px);font-weight:850}
+.progress-label em{color:var(--cyan);font-style:normal}
+.round{color:var(--mint);font-weight:850}
+.track{width:100%;height:11px;background:#263a57;border:1px solid #3b597c;border-radius:30px;overflow:hidden;margin:0 0 22px}
+.track-fill{height:100%;width:0%;background:linear-gradient(90deg,#5edce8,#9bf4bc);transition:width .35s ease}
+.game-meta{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:18px}
+.scoreboard{display:flex;gap:10px;flex-wrap:wrap}
+.scorebox{padding:11px 16px;border:1px solid #426085;background:#172843;border-radius:13px;font-weight:800;font-size:clamp(16px,1.4vw,20px)}
+.scorebox b{color:var(--mint)}
+.scorebox.turn{border-color:var(--orange);background:#3d2d29}
+.time{border:1px solid #567492;border-radius:13px;background:#1c314c;padding:11px 17px;font-weight:850;font-size:clamp(18px,1.5vw,23px);font-variant-numeric:tabular-nums;min-width:130px;text-align:center}
+.time.urgent{border-color:var(--rose);color:var(--rose);animation:pulse 1s infinite alternate}
+@keyframes pulse{to{background:#5d2536}}
+.questioncard{background:linear-gradient(160deg,#172b4b,#111e37);border:1px solid #416187;box-shadow:var(--shadow);border-radius:25px;overflow:hidden}
+.q-header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:26px clamp(22px,3vw,42px) 0}
+.tag{padding:9px 14px;border:1px solid #42738e;border-radius:10px;background:#153d55;color:#97ecff;font-weight:850;font-size:clamp(14px,1.25vw,17px)}
+.diff{padding:9px 14px;border:1px solid #677f97;border-radius:10px;font-weight:800;font-size:clamp(14px,1.25vw,17px)}
+.diff.easy{color:#98f0c4;background:#183f3a}.diff.mid{color:#ffe0a1;background:#4d3b2b}.diff.hard{color:#ffbac0;background:#502f40}
+.questiontext{font-weight:860;line-height:1.35;font-size:clamp(26px,3.25vw,42px);margin:28px clamp(22px,3vw,42px);max-width:1100px;letter-spacing:-.018em}
+.diagram{width:100%;max-width:630px;margin:-5px auto 24px;padding:0 16px;text-align:center}
+.diagram svg{width:min(100%,580px);max-height:240px;height:auto;border-radius:17px;background:#eef6ff;border:1px solid #7db1cf;display:block;margin:auto}
+.diagram small{color:#b0c5e2;font-size:12px;display:block;margin:7px auto}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 clamp(22px,3vw,42px) clamp(22px,3vw,38px)}
+.answer{min-height:126px;border-radius:22px;padding:19px 10px;display:flex;gap:16px;align-items:center;justify-content:center;font-size:clamp(28px,3.1vw,42px);font-weight:900;letter-spacing:-.02em}
+.answer .letter{font-size:clamp(15px,1.8vw,22px);border:2px solid currentColor;padding:4px 12px;border-radius:10px;opacity:.8}
+.answer.true{border:2px solid #69cddb;background:linear-gradient(135deg,#13566b,#0e364e);color:#e4fdff}
+.answer.false{border:2px solid #f49fa5;background:linear-gradient(135deg,#6a2b43,#472038);color:#fff1f4}
+.answer:not(:disabled):hover{filter:brightness(1.18);transform:translateY(-2px)}
+.answer:disabled{opacity:.42}
+.answer.correct{background:linear-gradient(135deg,#137b68,#15503e);color:#f1fff9;border:3px solid var(--mint);opacity:1}
+.answer.chosen-wrong{background:linear-gradient(135deg,#933e48,#5b2635);border:3px solid #ff9ba1;opacity:1}
+.feedback{margin:0 clamp(22px,3vw,42px) clamp(22px,3vw,36px);padding:23px 25px;border:1px solid #527897;background:#0c1d34;border-radius:18px;display:none}
+.feedback.good{border-color:#5ec3a0;background:#123a35}
+.feedback.bad{border-color:#e08a91;background:#462936}
+.feedback h3{margin:0 0 9px;font-size:clamp(21px,2vw,27px)}
+.feedback p{font-size:clamp(17px,1.6vw,21px);line-height:1.5;color:#eef8ff;margin:0}
+.feedback .next{background:linear-gradient(105deg,#7ce3f0,#a0eacb);color:#092534;border:0;padding:15px 23px;font-size:clamp(17px,1.5vw,20px);font-weight:850;border-radius:13px;margin-top:19px;min-height:54px}
+.bottomhint{color:#b3c6e1;text-align:center;font-size:14px;margin:18px auto;line-height:1.6}
+.results{display:none}
+.final{border:1px solid #42658e;border-radius:25px;background:linear-gradient(145deg,#172c4e,#101d35);padding:clamp(27px,4vw,54px);text-align:center;box-shadow:var(--shadow)}
+.final h2{font-size:clamp(33px,4.3vw,57px);margin:10px 0}
+.bigscore{font-size:clamp(60px,9vw,112px);font-weight:950;line-height:1;color:#98f1c9;margin:16px 0}
+.final p{font-size:clamp(18px,1.8vw,25px);color:#d3e2f5}
+.finalstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:23px 0;text-align:left}
+.stat{border:1px solid #465f81;padding:18px;border-radius:15px;background:#142944;font-size:19px}
+.stat b{display:block;font-size:clamp(25px,2.2vw,31px);color:var(--mint);margin-top:4px}
+.detailstitle{text-align:left;font-size:clamp(24px,2.2vw,30px);margin:27px 0 13px}
+.review{text-align:left;display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:12px}
+.review .row{border:1px solid #45607e;border-radius:13px;padding:15px;background:#11243e;line-height:1.5}
+.review .row strong{display:block;color:var(--cyan);margin-bottom:3px}
+.review .row small{display:block;color:#b8cce6;margin-top:7px}
+.endactions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.endactions button{flex:1;min-width:190px}
+.muted{color:#bed0e9}
+.footer{text-align:center;color:#91a7c9;font-size:13px;margin:28px 4px 8px;line-height:1.5}
+@media(max-width:700px){.setting{grid-template-columns:1fr}.answers{grid-template-columns:1fr}.answer{min-height:95px}.topbar{align-items:flex-start}.top-actions .pill{display:none}.q-header{padding-top:20px}.questiontext{margin-top:21px}.diagram svg{max-height:185px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{body{background:white;color:black}.top-actions,.endactions,.mainbtn{display:none}.final{color:#111;background:#fff}.results{display:block!important}}
+
+/* Ουδέτερη εμφάνιση σχολικού διαγωνίσματος, φιλική για κινητά. */
+:root {color-scheme:light;--bg:#f4f6fa;--panel:#ffffff;--panel2:#f7f9fc;--line:#d7dfea;--text:#223248;--sub:#52637a;--cyan:#294f80;--mint:#1b725a;--orange:#b87d21;--rose:#b34c55;--shadow:0 5px 25px rgba(34,52,80,.07)}
+body{background:#f4f6fa;color:#223248;font-family:Arial,"Segoe UI",sans-serif}
+.app{max-width:1000px}
+.topbar{border-bottom:1px solid #dbe1e9;padding-bottom:16px;margin-bottom:20px}
+.brand{font-size:clamp(16px,1.8vw,20px);letter-spacing:0;font-weight:750;color:#24456c}
+.logo{width:42px;height:42px;border-radius:8px;background:#24456c;color:white;font-size:25px}
+.top-actions .pill,.pill{border-color:#d8e0e9;background:#fff;color:#40536a;font-weight:650}
+.smallbtn{background:#fff;border-color:#cbd5e0;color:#24456c;border-radius:8px;font-weight:650}
+.smallbtn:hover{background:#eef2f7}
+.hero{padding:15px 5px 15px}
+.kicker{background:#eef2f8;color:#2d507a;border-color:#e2e8f2;letter-spacing:0;border-radius:6px;text-transform:none;font-weight:700}
+h1{font-size:clamp(32px,5.2vw,58px);font-weight:800;letter-spacing:-.02em;margin:17px 0 14px;line-height:1.13}
+h1 span{background:none;color:#345d87}
+.subtitle{color:#5a6b80;font-size:clamp(16px,1.65vw,20px)}
+.metrics{margin:22px 0 14px}
+.metric{background:#fff;border:1px solid #dce3ed;padding:11px 18px;border-radius:7px;font-size:clamp(14px,1.3vw,17px);font-weight:650;color:#4a5d72}
+.metric strong{color:#254f7b}
+.setup,.questioncard,.final{background:#fff;box-shadow:var(--shadow);border:1px solid #e0e6ed;border-radius:13px}
+.setup{max-width:770px;margin-top:15px}
+.setup h2{font-size:25px;color:#263d59}
+.setting{border-top:1px solid #e1e8f0}
+.setting .setting-label{color:#40536a;font-size:17px}
+.segment{background:#f2f5f9;border:1px solid #d8e1eb;border-radius:9px}
+.segment button{font-size:16px;font-weight:650;color:#40536a;border-radius:7px}
+.segment button.active{background:#fff;color:#234d7a;border-color:#bfcbd9;box-shadow:0 1px 3px rgba(0,0,0,.07)}
+select{background:#fff;color:#293c54;border:1px solid #c6d2df;border-radius:8px;font-size:16px}
+.mainbtn,.feedback .next{background:#2d517c;color:white;border-radius:8px;box-shadow:none;font-size:clamp(18px,1.8vw,22px);font-weight:750}
+.mainbtn:hover,.feedback .next:hover{background:#1c3d64;filter:none}
+.tip,.bottomhint{color:#63738a}
+.progress-label,.round{color:#29486b}
+.progress-label em{color:#294f80}
+.track{background:#e4ebf3;border-color:#e4ebf3}
+.track-fill{background:#2d517c}
+.scorebox{background:#f5f7fa;border:1px solid #dce3ec;color:#334b66;border-radius:8px}
+.scorebox b{color:#1b7157}
+.scorebox.turn{border-color:#bda475;background:#fff8ed}
+.time{color:#3e5571;background:#edf2f8;border:1px solid #dce5ef;border-radius:8px}
+.time.urgent{background:#fff0f0;color:#ae3d48;border-color:#dba2a8;animation:none}
+.q-header .tag{background:#ebf2fa;color:#244f7d;border:1px solid #d8e4f0;border-radius:6px}
+.diff{border-radius:6px}
+.diff.easy{color:#1c7154;background:#e9f6f1;border-color:#d2ebdf}
+.diff.mid{color:#88611d;background:#fbf3e4;border-color:#f2e0bc}
+.diff.hard{color:#a3474f;background:#faedf0;border-color:#f2dce0}
+.questiontext{color:#24374f;font-weight:750;font-size:clamp(22px,2.7vw,32px);letter-spacing:0}
+.answer{min-height:105px;border-radius:10px;font-size:clamp(24px,2.8vw,34px)}
+.answer.true{background:#f0f7f5;color:#1b6552;border:2px solid #a5cdc0}
+.answer.false{background:#fff4f4;color:#ac4a53;border:2px solid #dfb0b3}
+.answer .letter{border:1px solid currentColor;border-radius:6px}
+.answer.correct{background:#e1f4e9;color:#166248;border:2px solid #51a581}
+.answer.chosen-wrong{background:#fbe3e5;color:#983c43;border:2px solid #d37379}
+.feedback{background:#f3f6f9;border:1px solid #d8e2ec;border-radius:8px;color:#253f5e}
+.feedback.good{background:#edf7f1;border-color:#9ad1b2}
+.feedback.bad{background:#fff2f2;border-color:#e2b2b8}
+.feedback h3{color:#233d56}
+.feedback p{color:#34475e}
+.feedback .next{font-size:17px}
+.final p{color:#546d88}
+.bigscore{color:#1c7258}
+.finalstats .stat,.stat{background:#f8fafc;border:1px solid #e0e7ef;color:#435972;border-radius:8px}
+.stat b{color:#1d6552}
+.review .row{background:#f9fafc;color:#405773;border:1px solid #dfe7ee;border-radius:8px}
+.review .row strong{color:#2c507b}
+.review .row small{color:#52637a}
+.footer{color:#718099}
+@media(max-width:700px){.app{padding:14px}.topbar{gap:8px}.brand{gap:8px}.logo{width:34px;height:34px;font-size:21px}.top-actions .smallbtn{font-size:12px;padding:8px}.metrics{gap:7px}.metric{padding:9px}.setup{padding:19px}.questiontext{margin:22px 18px;font-size:23px}.q-header{padding:20px 18px 0}.answers{padding:0 18px 20px;gap:10px}.answer{min-height:75px}.feedback{margin:0 18px 18px;padding:18px}.review{grid-template-columns:1fr}}
+/* Διακριτική προσωπική προσφώνηση. */
+.student-greeting{font-size:clamp(19px,2.3vw,26px);font-weight:700;color:#294f80;margin:8px auto 6px}
+.student-in-game{font-size:15px;font-weight:700;color:#526b88;margin-bottom:11px}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+ <div class="brand"><div class="logo" aria-hidden="true">△</div><div>Γεωμετρία Α΄ Λυκείου</div></div>
+ <div class="top-actions"><span class="pill">Α΄ ΛΥΚΕΙΟΥ · §3.1–3.7</span><button class="smallbtn" type="button" id="fullscreen" title="Πλήρης οθόνη">⛶ Πλήρης οθόνη</button></div>
+</header>
+<main>
+<section id="welcome">
+ <div class="hero">
+  <span class="kicker">Επαναληπτική άσκηση · Κεφάλαιο 3</span>
+  <h1>Σωστό <span>ή Λάθος;</span></h1>
+  <p class="student-greeting">Χριστίνα, έτοιμη για λίγη εξάσκηση;</p>
+  <p class="subtitle">Γεωμετρία Α΄ Λυκείου · Παράγραφοι 3.1–3.7<br>Τρίγωνα, κριτήρια ισότητας και βασικές γεωμετρικές ιδιότητες.</p>
+  <div class="metrics"><span class="metric"><strong>21</strong> ερωτήσεις</span><span class="metric"><strong>7</strong> ενότητες</span><span class="metric"><strong>3</strong> επίπεδα</span></div>
+ </div>
+ <div class="setup">
+  <h2>Χριστίνα, πριν ξεκινήσεις…</h2>
+  <p class="tip" style="text-align:left;margin:0 0 16px">Το τεστ είναι ατομικό. Στο τέλος θα δεις τη βαθμολογία σου και ποιες ενότητες χρειάζονται επανάληψη.</p>
+  <div class="setting"><label class="setting-label" for="timerChoice">Χρόνος ανά ερώτηση</label><select id="timerChoice"><option value="0">Χωρίς χρονόμετρο</option><option value="30">30 δευτερόλεπτα</option><option value="45">45 δευτερόλεπτα</option><option value="60">60 δευτερόλεπτα</option></select></div>
+  <div class="setting"><label class="setting-label" for="orderChoice">Σειρά ερωτήσεων</label><select id="orderChoice"><option value="levels">Από εύκολες σε δύσκολες</option><option value="mix">Ανάμεικτες ερωτήσεις</option></select></div>
+  <button id="startBtn" class="mainbtn" type="button">Ξεκίνα, Χριστίνα!</button>
+  <p class="tip">Επίλεξε «Σωστό» ή «Λάθος» σε κάθε πρόταση. Μετά από κάθε απάντηση εμφανίζεται σύντομη αιτιολόγηση.</p>
+ </div>
+</section>
+<section id="game" class="game" aria-live="polite">
+ <div class="student-in-game">Χριστίνα · Η προσπάθειά σου</div>
+ <div class="progress-block"><div class="progress-label" id="progressLabel">Ερώτηση <em>1 / 21</em></div><div class="round" id="roundLabel">ΓΥΡΟΣ 1 · ΕΥΚΟΛΕΣ</div></div>
+ <div class="track" role="progressbar" aria-label="Πρόοδος ερωτήσεων" aria-valuemin="0" aria-valuemax="21" aria-valuenow="0" id="progress"><div class="track-fill" id="progressFill"></div></div>
+ <div class="game-meta"><div class="scoreboard" id="scoreboard"><div class="scorebox">Σκορ: <b>0</b></div></div><div id="timerBox" class="time" style="display:none">⏱ 00:30</div></div>
+ <div class="questioncard">
+  <div class="q-header"><span id="topicTag" class="tag">§3.1</span><span id="difficultyTag" class="diff easy">ΕΥΚΟΛΗ</span></div>
+  <div class="questiontext" id="questionText"></div>
+  <div class="diagram" id="diagram" style="display:none"></div>
+  <div class="answers"><button class="answer true" type="button" id="trueBtn"><span class="letter">1</span> ΣΩΣΤΟ</button><button class="answer false" type="button" id="falseBtn"><span class="letter">2</span> ΛΑΘΟΣ</button></div>
+  <div id="feedback" class="feedback" role="status" aria-live="polite"><h3 id="feedbackTitle"></h3><p id="feedbackExplain"></p><button class="next" type="button" id="nextBtn">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ →</button></div>
+ </div>
+ <div class="bottomhint">Σκέψου αν η πρόταση ισχύει <b>πάντα</b>. Μία μόνο αντιπαραδειγματική περίπτωση αρκεί για να είναι «Λάθος».</div>
+</section>
+<section id="results" class="results">
+ <div class="final">
+  <div class="kicker">ΟΛΟΚΛΗΡΩΣΗ ΕΠΑΝΑΛΗΨΗΣ</div>
+  <h2 id="finishHeading">Μπράβο, Χριστίνα, για την προσπάθεια!</h2>
+  <div class="bigscore" id="finalScore">0/21</div>
+  <p id="finishMessage"></p>
+  <div id="finalStats" class="finalstats"></div>
+  <h3 class="detailstitle">Ανασκόπηση ανά ενότητα</h3><div id="review" class="review"></div>
+  <div class="endactions"><button type="button" id="restartBtn" class="mainbtn">Νέα προσπάθεια</button><button type="button" id="printBtn" class="smallbtn">⎙ Εκτύπωση αποτελεσμάτων</button></div>
+ </div>
+</section>
+</main>
+<footer class="footer">Ατομικό επαναληπτικό τεστ Γεωμετρίας Α΄ Λυκείου · Παράγραφοι 3.1–3.7<br>Τα σχήματα είναι ενδεικτικά και δεν είναι απαραίτητα υπό κλίμακα.</footer>
+</div>
+<script>
+'use strict';
+const svgDefs = {
+ median:`<svg viewBox="0 0 420 240" role="img" aria-label="Τρίγωνο ΑΒΓ με διάμεσο ΑΔ προς τη ΒΓ"><g fill="none" stroke="#123b61" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M210 23 L58 207 L362 207 Z"/><path d="M210 23 L210 207" stroke="#139da9" stroke-width="4" stroke-dasharray="8 6"/><path d="M134 200 l0 14 M286 200 l0 14" stroke="#dc7d3b" stroke-width="3"/></g><g fill="#123b61" font-size="19" font-weight="800"><text x="208" y="17">Α</text><text x="38" y="224">Β</text><text x="363" y="224">Γ</text><text x="203" y="228">Δ</text></g></svg>`,
+ pgp:`<svg viewBox="0 0 420 240" role="img" aria-label="Δύο τρίγωνα με δύο επισημασμένες πλευρές και περιεχόμενη γωνία"><g fill="none" stroke="#123b61" stroke-width="4" stroke-linejoin="round"><path d="M45 202 L112 40 L182 202 Z M244 202 L311 40 L381 202 Z"/></g><g stroke="#138fa5" stroke-width="6" stroke-linecap="round"><path d="M76 127 L86 131 M275 127 L285 131 M125 198 L125 206 M324 198 L324 206"/></g><g fill="none" stroke="#db7740" stroke-width="4"><path d="M91 91 Q113 110 137 94 M290 91 Q312 110 336 94"/></g><g fill="#153c63" font-size="16" font-weight="800"><text x="105" y="27">Α</text><text x="303" y="27">Δ</text><text x="26" y="220">Β</text><text x="182" y="220">Γ</text><text x="223" y="220">Ε</text><text x="382" y="220">Ζ</text></g></svg>`,
+ isosceles:`<svg viewBox="0 0 420 240" role="img" aria-label="Ισοσκελές ΑΒΓ, η διχοτόμος ΑΔ χωρίζει την κορυφή Α"><g fill="none" stroke="#153c63" stroke-width="4" stroke-linejoin="round"><path d="M210 22 L67 203 L353 203 Z"/><path d="M210 22 L210 203" stroke="#088c9e" stroke-dasharray="8 6"/></g><path d="M164 79 l14 9 M242 88 l14 -9" stroke="#e87839" stroke-width="5"/><path d="M191 65 Q210 80 229 65" fill="none" stroke="#d28749" stroke-width="3"/><g fill="#153c63" font-size="19" font-weight="800"><text x="207" y="17">Α</text><text x="43" y="224">Β</text><text x="357" y="224">Γ</text><text x="205" y="225">Δ</text></g></svg>`,
+ perpendicular:`<svg viewBox="0 0 420 240" role="img" aria-label="Ευθεία ε και κάθετο τμήμα ΑΗ"><g stroke="#133c61" stroke-width="4" stroke-linecap="round"><path d="M40 181 H379"/><path d="M212 36 V181" stroke="#0798a7" stroke-dasharray="8 6"/><path d="M212 158 H235 V181" fill="none" stroke="#cb7844" stroke-width="3"/></g><circle cx="212" cy="36" r="5" fill="#0b8fa2"/><g fill="#153c63" font-size="19" font-weight="800"><text x="220" y="34">Α</text><text x="206" y="204">Η</text><text x="380" y="190">ε</text></g></svg>`,
+ circle:`<svg viewBox="0 0 420 240" role="img" aria-label="Κύκλος με κέντρο Ο και ακτίνα ΟΑ"><circle cx="210" cy="120" r="95" fill="none" stroke="#143f64" stroke-width="4"/><path d="M210 120 L305 120" stroke="#0f9caa" stroke-width="5"/><circle cx="210" cy="120" r="5" fill="#13456c"/><circle cx="305" cy="120" r="5" fill="#0f9caa"/><g fill="#153c63" font-size="20" font-weight="800"><text x="184" y="112">Ο</text><text x="316" y="125">Α</text><text x="236" y="106">r</text></g></svg>`,
+ altitude:`<svg viewBox="0 0 420 240" role="img" aria-label="Αμβλυγώνιο τρίγωνο ΑΒΓ με ύψος ΑΔ στην προέκταση της ΒΓ"><g fill="none" stroke="#133c61" stroke-width="4" stroke-linejoin="round"><path d="M296 25 L57 193 L239 193 Z"/><path d="M239 193 H368" stroke="#788ca6" stroke-dasharray="6 6"/><path d="M296 25 V193" stroke="#0a93a3" stroke-dasharray="8 5"/><path d="M275 193 V172 H296" stroke="#cb7747" stroke-width="3"/></g><g fill="#153c63" font-size="19" font-weight="800"><text x="296" y="18">Α</text><text x="39" y="210">Β</text><text x="231" y="216">Γ</text><text x="289" y="216">Δ</text></g></svg>`,
+ right:`<svg viewBox="0 0 420 240" role="img" aria-label="Δύο ορθογώνια τρίγωνα με ίσες υποτείνουσες και μία ίση κάθετη πλευρά"><g fill="none" stroke="#153c63" stroke-width="4" stroke-linejoin="round"><path d="M35 202 L35 53 L178 202 Z M236 202 L236 53 L379 202 Z"/><path d="M35 185 H52 V202 M236 185 H253 V202" stroke="#ce8853" stroke-width="3"/><path d="M35 53 L178 202 M236 53 L379 202" stroke="#0c93a8" stroke-width="6"/><path d="M27 120 H44 M228 120 H245" stroke="#e38745" stroke-width="5"/></g></svg>`,
+ bisector:`<svg viewBox="0 0 420 240" role="img" aria-label="Ευθύγραμμο τμήμα ΑΒ με μεσοκάθετο που περνά από Μ και σημείο Σ"><g stroke="#143e65" stroke-width="4" stroke-linecap="round" fill="none"><path d="M48 194 H373"/><path d="M208 25 V216" stroke="#0b9b9e" stroke-dasharray="8 5"/><path d="M208 170 H231 V194" stroke="#e08344" stroke-width="3"/><path d="M208 44 L48 194 M208 44 L373 194" stroke="#6a90be" stroke-width="2.5"/><path d="M123 187 V201 M288 187 V201" stroke="#e08344" stroke-width="3"/></g><g fill="#153c63" font-size="20" font-weight="800"><text x="32" y="218">Α</text><text x="378" y="217">Β</text><text x="195" y="229">Μ</text><text x="214" y="40">Σ</text></g></svg>`,
+ angle:`<svg viewBox="0 0 420 240" role="img" aria-label="Γωνία xΟy με διχοτόμο ΟΣ στο εσωτερικό της"><g fill="none" stroke="#153c63" stroke-width="4" stroke-linecap="round"><path d="M64 202 L340 34 M64 202 H385"/><path d="M64 202 L348 118" stroke="#078fa2" stroke-width="4" stroke-dasharray="8 5"/><path d="M120 168 Q140 176 138 202" stroke="#de7b40" stroke-width="3"/></g><circle cx="239" cy="150" r="5" fill="#078fa2"/><g fill="#153c63" font-size="19" font-weight="800"><text x="40" y="218">Ο</text><text x="342" y="28">x</text><text x="388" y="209">y</text><text x="250" y="147">Σ</text></g></svg>`
+};
+const bank = [
+{section:'3.1',level:1,text:'Η διάμεσος ενός τριγώνου ενώνει μία κορυφή με το μέσο της απέναντι πλευράς.',truth:true,why:'Αυτός είναι ο ορισμός της διαμέσου. Δεν απαιτείται η διάμεσος να είναι κάθετη στην απέναντι πλευρά.',diagram:'median'},
+{section:'3.2',level:1,text:'Στο 1ο κριτήριο ισότητας τριγώνων (Π–Γ–Π), η ίση γωνία πρέπει να περιέχεται ανάμεσα στις δύο αντίστοιχες ίσες πλευρές.',truth:true,why:'Το Π–Γ–Π σημαίνει Πλευρά – περιεχόμενη Γωνία – Πλευρά. Η θέση της γωνίας είναι ουσιώδης.',diagram:'pgp'},
+{section:'3.3',level:1,text:'Αν δύο τρίγωνα έχουν δύο αντίστοιχες γωνίες ίσες, τότε είναι οπωσδήποτε ίσα.',truth:false,why:'Η ισότητα δύο γωνιών δεν αρκεί για ισότητα τριγώνων. Στο Γ–Π–Γ χρειάζεται και η αντίστοιχη περιεχόμενη πλευρά.'},
+{section:'3.4',level:1,text:'Στο 3ο κριτήριο ισότητας τριγώνων (Π–Π–Π) συγκρίνουμε τις τρεις πλευρές των δύο τριγώνων μία προς μία.',truth:true,why:'Αν και οι τρεις πλευρές του ενός τριγώνου είναι ίσες με τις αντίστοιχες του άλλου, τα τρίγωνα είναι ίσα.'},
+{section:'3.5',level:1,text:'Από ένα σημείο εκτός μιας ευθείας άγεται μία και μόνο μία κάθετη προς την ευθεία.',truth:true,why:'Αυτό εκφράζει το θεώρημα ύπαρξης και μοναδικότητας της καθέτου από σημείο προς ευθεία.',diagram:'perpendicular'},
+{section:'3.6',level:1,text:'Δύο ορθογώνια τρίγωνα που έχουν μία οξεία γωνία ίση είναι υποχρεωτικά ίσα.',truth:false,why:'Η ίση οξεία γωνία από μόνη της δεν αρκεί. Χρειάζεται επίσης κατάλληλη ισότητα αντίστοιχων πλευρών.'},
+{section:'3.7',level:1,text:'Κάθε σημείο κύκλου με κέντρο Ο και ακτίνα 4 cm απέχει από το Ο ακριβώς 4 cm.',truth:true,why:'Ο κύκλος είναι ο γεωμετρικός τόπος των σημείων του επιπέδου που απέχουν σταθερή απόσταση r από το κέντρο Ο.',diagram:'circle'},
+
+{section:'3.1',level:2,text:'Κάθε διάμεσος ενός τριγώνου είναι ταυτόχρονα και ύψος.',truth:false,why:'Η διάμεσος καταλήγει στο μέσο της απέναντι πλευράς, ενώ το ύψος είναι κάθετο στην ευθεία της απέναντι πλευράς. Δεν συμπίπτουν σε κάθε τρίγωνο.',diagram:'median'},
+{section:'3.2',level:2,text:'Σε ισοσκελές τρίγωνο ΑΒΓ με ΑΒ = ΑΓ, αν η ΑΔ διχοτομεί τη γωνία Α, τότε τα τρίγωνα ΑΒΔ και ΑΓΔ είναι ίσα κατά Π–Γ–Π.',truth:true,why:'ΑΒ = ΑΓ, ΑΔ κοινή πλευρά και ∠ΒΑΔ = ∠ΔΑΓ. Άρα ισχύει το Π–Γ–Π.',diagram:'isosceles'},
+{section:'3.3',level:2,text:'Αν ∠Α = ∠Δ, ∠Β = ∠Ε και ΑΒ = ΔΕ, τότε τα τρίγωνα ΑΒΓ και ΔΕΖ είναι ίσα κατά Γ–Π–Γ.',truth:true,why:'Η ΑΒ βρίσκεται ανάμεσα στις γωνίες Α και Β, όπως η ΔΕ βρίσκεται ανάμεσα στις Δ και Ε. Ισχύει επομένως το Γ–Π–Γ.'},
+{section:'3.4',level:2,text:'Αν δύο τρίγωνα έχουν την ίδια περίμετρο, τότε είναι πάντοτε ίσα.',truth:false,why:'Για παράδειγμα, τρίγωνο με πλευρές 3, 4, 5 και ισόπλευρο με πλευρές 4, 4, 4 έχουν και τα δύο περίμετρο 12, αλλά δεν είναι ίσα.'},
+{section:'3.5',level:2,text:'Από ένα σημείο που βρίσκεται πάνω σε ευθεία μπορούμε να φέρουμε δύο διαφορετικές κάθετες προς αυτήν.',truth:false,why:'Η κάθετη προς ευθεία από δοσμένο σημείο της είναι μοναδική. Δεν υπάρχουν δύο διαφορετικές τέτοιες κάθετες.',diagram:'perpendicular'},
+{section:'3.6',level:2,text:'Δύο ορθογώνια τρίγωνα με τις δύο αντίστοιχες κάθετες πλευρές τους ίσες είναι ίσα.',truth:true,why:'Οι κάθετες πλευρές περιέχουν την ορθή γωνία (90°), άρα έχουμε δύο πλευρές και την περιεχόμενη γωνία ίσες: Π–Γ–Π.',diagram:'right'},
+{section:'3.7',level:2,text:'Κάθε σημείο της μεσοκαθέτου ενός ευθύγραμμου τμήματος ΑΒ ισαπέχει από τα άκρα Α και Β.',truth:true,why:'Η μεσοκάθετος του ΑΒ είναι ο γεωμετρικός τόπος των σημείων που έχουν ίσες αποστάσεις από τα Α και Β.',diagram:'bisector'},
+
+{section:'3.1',level:3,text:'Το ύψος ενός αμβλυγώνιου τριγώνου μπορεί να καταλήγει στην προέκταση της απέναντι πλευράς και όχι στην ίδια την πλευρά.',truth:true,why:'Το ύψος φέρεται κάθετα στην ευθεία της απέναντι πλευράς. Σε αμβλυγώνιο τρίγωνο ορισμένα ύψη έχουν ίχνος σε προεκτάσεις πλευρών.',diagram:'altitude'},
+{section:'3.2',level:3,text:'Αν δύο τρίγωνα έχουν δύο αντίστοιχες πλευρές ίσες και μία μη περιεχόμενη γωνία ίση, τότε είναι οπωσδήποτε ίσα.',truth:false,why:'Οι δύο πλευρές και μία μη περιεχόμενη γωνία (περίπτωση Π–Π–Γ) δεν αποτελούν γενικό κριτήριο ισότητας τριγώνων.'},
+{section:'3.3',level:3,text:'Αν ΑΒ = ΔΕ, ∠ΒΑΓ = ∠ΕΔΖ και ∠ΑΒΓ = ∠ΔΕΖ, τότε από το Γ–Π–Γ συμπεραίνουμε ότι ΑΓ = ΔΖ.',truth:true,why:'Οι κορυφές αντιστοιχούν Α↔Δ, Β↔Ε, Γ↔Ζ. Τα τρίγωνα είναι ίσα, άρα και οι αντίστοιχες πλευρές ΑΓ και ΔΖ.'},
+{section:'3.4',level:3,text:'Αν ΑΒ = ΔΕ, ΒΓ = ΔΖ και ΑΓ = ΕΖ, τότε κατά Π–Π–Π η κορυφή Β αντιστοιχεί στην κορυφή Ε.',truth:false,why:'Η Β ανήκει στις πλευρές ΑΒ και ΒΓ, που αντιστοιχούν στις ΔΕ και ΔΖ. Η κοινή τους κορυφή είναι η Δ, άρα Β↔Δ, όχι Β↔Ε.'},
+{section:'3.5',level:3,text:'Η απόσταση ενός σημείου Α από ευθεία ε ισούται με το μήκος οποιουδήποτε ευθύγραμμου τμήματος που ενώνει το Α με σημείο της ε.',truth:false,why:'Αν Α δεν ανήκει στην ε, η απόσταση ορίζεται ως το μήκος του κάθετου τμήματος από το Α προς την ε, όχι οποιουδήποτε πλάγιου τμήματος.',diagram:'perpendicular'},
+{section:'3.6',level:3,text:'Αν δύο ορθογώνια τρίγωνα έχουν ίσες υποτείνουσες και μία αντίστοιχη οξεία γωνία ίση, τότε είναι ίσα.',truth:true,why:'Έχουν την ορθή γωνία ίση, μία οξεία γωνία ίση και την περιεχόμενη ανάμεσά τους υποτείνουσα ίση. Εφαρμόζουμε το Γ–Π–Γ.'},
+{section:'3.7',level:3,text:'Αν το Σ βρίσκεται στο εσωτερικό μιας γωνίας και έχει ίσες αποστάσεις από τις πλευρές της, τότε ανήκει στη διχοτόμο της.',truth:true,why:'Αυτή είναι η αντίστροφη ιδιότητα της διχοτόμου: τα εσωτερικά σημεία που ισαπέχουν από τις πλευρές βρίσκονται στη διχοτόμο.',diagram:'angle'}
+];
+const titles={'3.1':'Στοιχεία και είδη τριγώνων','3.2':'1ο κριτήριο ισότητας (Π–Γ–Π)','3.3':'2ο κριτήριο ισότητας (Γ–Π–Γ)','3.4':'3ο κριτήριο ισότητας (Π–Π–Π)','3.5':'Ύπαρξη και μοναδικότητα καθέτου','3.6':'Ισότητα ορθογώνιων τριγώνων','3.7':'Κύκλος – Μεσοκάθετος – Διχοτόμος'};
+const difficulty={1:'ΕΥΚΟΛΗ',2:'ΜΕΣΑΙΑ',3:'ΔΥΣΚΟΛΗ'};
+const $=id=>document.getElementById(id);
+let timerLimit=0,sequence=[],index=0,score=0,responses=[],answered=false,countdown=null,remaining=0;
+function shuffle(a){for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function showPage(name){['welcome','game','results'].forEach(id=>$(id).style.display=id===name?(id==='welcome'?'block':'block'):'none');window.scrollTo(0,0);}
+function start(){timerLimit=Number($('timerChoice').value);sequence=$('orderChoice').value==='mix'?shuffle([...bank]):[...bank];score=0;responses=[];index=0;showPage('game');renderQuestion();}
+function clearTimer(){if(countdown){clearInterval(countdown);countdown=null;}}
+function renderClock(){if(timerLimit===0){$('timerBox').style.display='none';return;}$('timerBox').style.display='block';$('timerBox').textContent='⏱ 00:'+String(remaining).padStart(2,'0');$('timerBox').classList.toggle('urgent',remaining<=10);}
+function beginTimer(){clearTimer();remaining=timerLimit;renderClock();if(!timerLimit)return;countdown=setInterval(()=>{if(answered){clearTimer();return;}remaining--;renderClock();if(remaining<=0){clearTimer();answer(null,true);}},1000);}
+function renderBoard(){$('scoreboard').innerHTML=`<div class="scorebox">Σωστές απαντήσεις: <b>${score} / ${responses.length}</b></div>`;}
+function renderQuestion(){answered=false;const q=sequence[index];const level=q.level;$('progressLabel').innerHTML=`Ερώτηση <em>${index+1} / ${sequence.length}</em>`;$('roundLabel').textContent=$('orderChoice').value==='levels'?`ΓΥΡΟΣ ${level} · ${level===1?'ΕΥΚΟΛΕΣ':level===2?'ΜΕΣΑΙΕΣ':'ΔΥΣΚΟΛΕΣ'}`:`ΕΠΙΠΕΔΟ: ${difficulty[level]}`;$('progressFill').style.width=`${100*index/sequence.length}%`;$('progress').setAttribute('aria-valuenow',String(index));$('topicTag').textContent=`§${q.section} · ${titles[q.section]}`;$('difficultyTag').className=`diff ${level===1?'easy':level===2?'mid':'hard'}`;$('difficultyTag').textContent=difficulty[level];$('questionText').textContent=q.text;$('diagram').innerHTML=q.diagram?(svgDefs[q.diagram]+'<small>Σχηματική απεικόνιση · όχι απαραίτητα υπό κλίμακα</small>'):'';$('diagram').style.display=q.diagram?'block':'none';$('feedback').style.display='none';$('feedback').className='feedback';['trueBtn','falseBtn'].forEach(id=>{$(id).disabled=false;$(id).classList.remove('correct','chosen-wrong')});renderBoard();beginTimer();}
+function answer(val,timedOut=false){if(answered)return;answered=true;clearTimer();const q=sequence[index];const correct=val===q.truth;if(correct)score++;responses.push({q,correct,val,timedOut});$('trueBtn').disabled=true;$('falseBtn').disabled=true;$(q.truth?'trueBtn':'falseBtn').classList.add('correct');if(!correct&&val!==null)$(val?'trueBtn':'falseBtn').classList.add('chosen-wrong');$('feedback').className='feedback '+(correct?'good':'bad');$('feedbackTitle').textContent=correct?'Μπράβο, Χριστίνα! Σωστή απάντηση.':timedOut?'Χριστίνα, ο χρόνος τελείωσε.':'Χριστίνα, αυτή δεν ήταν η σωστή απάντηση.';$('feedbackExplain').innerHTML=`<strong>Σωστή απάντηση: ${q.truth?'ΣΩΣΤΟ':'ΛΑΘΟΣ'}.</strong> ${q.why}`;$('nextBtn').textContent=index===sequence.length-1?'ΔΕΣ ΤΑ ΑΠΟΤΕΛΕΣΜΑΤΑ →':'ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ →';$('feedback').style.display='block';renderBoard();$('feedback').scrollIntoView({behavior:'smooth',block:'nearest'});}
+function next(){if(!answered)return;index++;if(index>=sequence.length){finish();return;}renderQuestion();window.scrollTo({top:0,behavior:'smooth'});}
+function finish(){clearTimer();showPage('results');const percent=Math.round(100*score/sequence.length);$('finalScore').textContent=`${score} / ${sequence.length}`;$('finishHeading').textContent=percent>=90?'Εξαιρετική επίδοση, Χριστίνα!':percent>=70?'Πολύ καλή προσπάθεια, Χριστίνα!':percent>=50?'Χριστίνα, τα πας καλά — συνέχισε!':'Χριστίνα, η εξάσκηση θα σε βοηθήσει!';$('finishMessage').textContent=`Χριστίνα, απάντησες σωστά στο ${percent}% των ερωτήσεων. ${percent===100?'Όλες οι απαντήσεις σου ήταν σωστές!':'Δες την ανασκόπηση για να εντοπίσεις τι χρειάζεται επανάληψη.'}`;let stats=`<div class="stat">Συνολική επιτυχία<b>${percent}%</b></div><div class="stat">Σωστές απαντήσεις<b>${score}</b></div><div class="stat">Λανθασμένες / χρόνος<b>${sequence.length-score}</b></div>`;$('finalStats').innerHTML=stats;let html='';for(const section of Object.keys(titles)){const related=responses.filter(r=>r.q.section===section),success=related.filter(r=>r.correct).length;html+=`<div class="row"><strong>§${section} · ${titles[section]}</strong>${success} / ${related.length} σωστές${success===related.length?' · ✓ Όλα σωστά':''}`;for(const r of related.filter(r=>!r.correct)){html+=`<small>• ${r.q.text}<br>→ <b>${r.q.truth?'Σωστό':'Λάθος'}</b>: ${r.q.why}</small>`;}html+='</div>';} $('review').innerHTML=html;$('progressFill').style.width='100%';}
+$('startBtn').addEventListener('click',start);
+$('trueBtn').addEventListener('click',()=>answer(true));
+$('falseBtn').addEventListener('click',()=>answer(false));
+$('nextBtn').addEventListener('click',next);
+$('restartBtn').addEventListener('click',()=>{clearTimer();showPage('welcome')});
+$('printBtn').addEventListener('click',()=>window.print());
+$('fullscreen').addEventListener('click',async()=>{try{if(!document.fullscreenElement){await document.documentElement.requestFullscreen()}else{await document.exitFullscreen()}}catch(e){alert('Για πλήρη οθόνη, χρησιμοποίησε το πλήκτρο F11 του υπολογιστή.')}});
+document.addEventListener('keydown',e=>{if(e.target.tagName==='SELECT'||e.target.tagName==='BUTTON'&&e.key==='Enter')return;if($('game').style.display==='block'){if(!answered&&(e.key==='1'||e.key.toLowerCase()==='s'||e.key.toLowerCase()==='σ')){e.preventDefault();answer(true)}else if(!answered&&(e.key==='2'||e.key.toLowerCase()==='l'||e.key.toLowerCase()==='λ')){e.preventDefault();answer(false)}else if(answered&&e.key==='Enter'){e.preventDefault();next()}}});
+// Έλεγχος ποιότητας δεδομένων: ακριβώς 3 ερωτήσεις ανά παράγραφο και επίπεδο.
+console.assert(bank.length===21 && Object.keys(titles).every(s=>[1,2,3].every(level=>bank.filter(q=>q.section===s&&q.level===level).length===1)),'Αναντιστοιχία τράπεζας ερωτήσεων');
+</script>
+</body>
+</html>
